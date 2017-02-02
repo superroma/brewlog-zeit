@@ -1,6 +1,6 @@
-import React, {PropTypes} from 'react'
+import React, {PropTypes} from 'react' 
 
-const Edit = (props) => (
+const Edit = (props) => (   
   <div className="form-group row">
     <label htmlFor={props.inputId} className="col-sm-2 col-form-label">
       {props.labelText}
