@@ -2,8 +2,8 @@ import React from 'react'
 import Link from 'next/prefetch'
 
 export const NavLink = (props) => (
-  <Link href={props.to} className="nav-item nav-link" activeClassName="active">
-    <a>{props.children}</a>
+  <Link href={props.to}>
+    <a className="nav-item nav-link" activeClassName="active">{props.children}</a>
   </Link>  
 )
 export const NavBar = () => (

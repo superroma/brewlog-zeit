@@ -1,4 +1,8 @@
 
+# macos shit
+.DS_Store
+
+# build folder
 dist
 
 # dependencies
