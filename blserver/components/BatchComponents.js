@@ -22,7 +22,7 @@ const Select = ({inputId, labelText, items, value}) => (
     <label htmlFor={inputId} className="col-sm-2 col-form-label">{labelText}</label>
     <div className="col-sm-10">
       <select className="form-control" id={inputId} value={value}>
-        {items.map((item, i) => (<option value={i}>{item}</option>))}
+        {items.map((item, i) => (<option key={i} value={i}>{item}</option>))}
       </select>
     </div>
   </div>
