@@ -1,0 +1,1 @@
+export const getPathName = ({req, pathname}) => req && req.url || pathname
