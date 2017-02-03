@@ -8,8 +8,8 @@ let batchListData =
     {id: 4, RecipeName: "R&R IPA from server!", SessionDate: "05.05.2017"},
   ]
 
-module.exports = async function (req, res) {
+module.exports = async (req, res) => { 
   result = batchListData
   res.setHeader('Access-Control-Allow-Origin', '*')
   send(res, 200, result)
-}
+}   

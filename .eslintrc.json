@@ -9,6 +9,7 @@
         "ecmaFeatures": {
             "jsx": true
         },
+        "ecmaVersion": 7,
         "sourceType": "module"
     },
     "rules": {
@@ -21,6 +22,7 @@
     },
     "plugins": [
         "react"
-    ]
+    ],
+    "extends": ["eslint:recommended", "plugin:react/recommended"]
     
 }
