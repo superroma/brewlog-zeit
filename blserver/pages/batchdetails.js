@@ -1,9 +1,9 @@
 import React from 'react'
-import App from '../components/App'
+import Root from '../containers/Root'
 import { BatchDetailView } from '../components/BatchDetailView'
 
 export default (props) => (
-  <App {...props}>
-        <BatchDetailView/>
-      </App>
-    )
+  <Root {...props}>
+      <BatchDetailView/>
+  </Root>
+)

@@ -1,9 +1,9 @@
 import React from 'react'
-import App from '../components/App'
+import Root from '../containers/Root'
 import { InventoryView } from '../components/Stubs'
 
 export default (props) => (
-    <App {...props}>
+    <Root {...props}>
         <InventoryView/>
-    </App>
+    </Root>
   )

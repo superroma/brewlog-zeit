@@ -1,9 +1,9 @@
 import React from 'react'
-import App from '../components/App'
+import Root from '../containers/Root'
 import { SettingsView } from '../components/Stubs'
 
 export default (props) => (
-  <App {...props}>
+  <Root {...props}>
       <SettingsView/>
-  </App>
+  </Root>
 )
