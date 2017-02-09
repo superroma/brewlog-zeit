@@ -1,9 +1,7 @@
 import React from 'react'
-import Root from '../containers/Root'
+import makePage from '../lib/makePage'
 import { BatchDetailView } from '../components/BatchDetailView'
 
-export default (props) => (
-  <Root {...props}>
-      <BatchDetailView/>
-  </Root>
-)
+export default makePage(() => (
+  <BatchDetailView/>
+))
