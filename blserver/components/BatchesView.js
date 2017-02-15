@@ -1,3 +1,5 @@
+import React, {PropTypes} from 'react'
+
 // let batchListData = 
 //   [
 //     {id: 1, RecipeName: "London Pride", SessionDate: "01.01.2016"},
@@ -34,6 +36,8 @@ const BatchList = ({batches}) => (
   </div>
 )
 
-export const BatchesView = (props) => (
-  <BatchList {...props}/>
+BatchList.propTypes = { batches: PropTypes.array }
+
+export const BatchesView = ({batches}) => (
+  <BatchList batches={batches}/>
 )
