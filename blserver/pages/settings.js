@@ -1,9 +1,7 @@
 import React from 'react'
-import Root from '../containers/Root'
+import makePage from '../lib/makePage'
 import { SettingsView } from '../components/Stubs'
 
-export default (props) => (
-  <Root {...props}>
-      <SettingsView/>
-  </Root>
-)
+export default makePage(() => (
+  <SettingsView/>
+))

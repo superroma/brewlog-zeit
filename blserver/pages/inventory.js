@@ -1,9 +1,7 @@
 import React from 'react'
-import Root from '../containers/Root'
+import makePage from '../lib/makePage'
 import { InventoryView } from '../components/Stubs'
 
-export default (props) => (
-    <Root {...props}>
-        <InventoryView/>
-    </Root>
-  )
+export default makePage(() => (
+    <InventoryView/>
+))

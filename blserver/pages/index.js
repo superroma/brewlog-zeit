@@ -1,9 +1,7 @@
 import React from 'react'
-import Root from '../containers/Root'
+import makePage from '../lib/makePage'
 import { HomeView } from '../components/Stubs'
 
-export default (props) => (
-  <Root {...props}>
-    <HomeView/>
-  </Root>
-)
+export default makePage( () => (
+  <HomeView/>
+))

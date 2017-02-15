@@ -1,5 +1,6 @@
 import React from 'react'
-import Root from '../containers/Root'
+//import makePage from '../lib/makePage'
+import App from '../containers/App'
 import { BatchesView } from '../components/BatchesView'
 import { NavBar } from '../components/NavBar'
 import fetch from 'isomorphic-fetch'
@@ -20,12 +21,12 @@ export default class BatchesPage extends React.Component {
 
   render () {
     return (
-      <Root {...this.props}>
+      <App>
         {this.props.data.batches?
           <BatchesView batches={this.props.data.batches}/>:
           this.props.data.err
         }  
-      </Root>
+      </App>
     )
   }
 }
