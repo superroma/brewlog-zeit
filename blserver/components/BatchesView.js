@@ -36,8 +36,14 @@ const BatchList = ({batches}) => (
   </div>
 )
 
-BatchList.propTypes = { batches: PropTypes.array }
+BatchList.propTypes = { 
+  batches: PropTypes.array.isRequired 
+}
 
-export const BatchesView = ({batches}) => (
-  <BatchList batches={batches}/>
-)
+export const BatchesView = ({batches, err}) => {
+  if (batches) {
+    return ( <BatchList batches={batches}/> )
+  } else {
+    return ( <h3>{err}</h3> )
+  }
+}
