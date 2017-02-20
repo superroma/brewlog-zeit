@@ -1,8 +1,6 @@
 import React from 'react'
 import makePage from '../lib/makePage'
-//import App from '../containers/App'
 import { BatchesView } from '../components/BatchesView'
-//import { NavBar } from '../components/NavBar'
 import fetch from 'isomorphic-fetch'
 
 const getData = async function() {
@@ -17,8 +15,8 @@ const getData = async function() {
   return data
 }
 
-export default makePage(({data}) => (
-        <BatchesView {...data}/>
+export default makePage(() => (
+        <BatchesView/>
   ), 
   getData
 )

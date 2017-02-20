@@ -1,11 +1,5 @@
 import React, {PropTypes} from 'react'
-
-// let batchListData = 
-//   [
-//     {id: 1, RecipeName: "London Pride", SessionDate: "01.01.2016"},
-//     {id: 2, RecipeName: "R&R Stout", SessionDate: "12.12.2016"},
-//     {id: 3, RecipeName: "R&R IPA", SessionDate: "01.01.2017"}
-//   ]
+import { connect } from 'react-redux'
 
 const BatchListItem = ({RecipeName, SessionDate}) => (
   <a href="#" className="list-group-item justify-content-between">
@@ -15,21 +9,17 @@ const BatchListItem = ({RecipeName, SessionDate}) => (
     </span>
   </a>
 )
-///const listItems = batchListData.map(
-//  ({id, RecipeName, SessionDate}) => 
-//    <BatchListItem key={id} RecipeName={RecipeName} SessionDate={SessionDate} />
-//)
+
 const BatchList = ({batches}) => (
   <div className="card">
     <h4 className="card-header">Batches</h4>
     <div className="card-block">
       <button className="btn btn-primary">New Batch</button>
       <div className="list-group">
-        {batches? batches.map(
+        {batches.map(
           ({id, RecipeName, SessionDate}) => 
             <BatchListItem key={id} RecipeName={RecipeName} SessionDate={SessionDate} />
-          ):
-        "No data"}
+          )}
       </div>
     </div>
     <div className="card-footer">footer</div>
@@ -40,10 +30,11 @@ BatchList.propTypes = {
   batches: PropTypes.array.isRequired 
 }
 
-export const BatchesView = ({batches, err}) => {
-  if (batches) {
-    return ( <BatchList batches={batches}/> )
-  } else {
-    return ( <h3>{err}</h3> )
+export const BatchesView = connect(state => state.data)( ({batches, err}) => {
+    if (batches) {
+      return ( <BatchList batches={batches}/> )
+    } else {
+      return ( <h3>{err}</h3> )
+    }
   }
-}
+)

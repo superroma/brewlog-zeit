@@ -1,6 +1,7 @@
 import React from 'react'
 import {Provider} from 'react-redux'
-import { reducer, initStore} from '../store'
+import {initStore} from '../store'
+import reducer from '../reducers'
 import App from '../containers/App'
 
 
@@ -12,16 +13,16 @@ const makePage = (Component, getDataFunc) => (
         }
         static async getInitialProps (ctx) {
             const isServer = !!ctx.req
+            const data = await this.getData()
             const initialState = {
-                
+                data
             }
-            //const store = initStore(reducer, initialState, isServer)
-            
+            const store = initStore(reducer, initialState, isServer)
             return {
-                initialState/*: store.getState()*/,
+                initialState: store.getState(),
                 isServer,
                 nav: {pathname: ctx.url? ctx.url.pathname: ctx.pathname },
-                data: await this.getData()
+                //data
             }
         }
         constructor (props) {
@@ -32,7 +33,7 @@ const makePage = (Component, getDataFunc) => (
             return (
                 <Provider store={this.store}>
                     <App nav={this.props.nav}>
-                        <Component {...this.props} />
+                        <Component/>
                     </App>
                 </Provider>
             )
