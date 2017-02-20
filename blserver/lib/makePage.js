@@ -1,23 +1,20 @@
 import React from 'react'
 import {Provider} from 'react-redux'
-import {initStore} from '../store'
+import { initStore } from '../store'
+import { fetchData } from '../actions'
 import reducer from '../reducers'
 import App from '../containers/App'
 
 
 
-const makePage = (Component, getDataFunc) => (
+const makePage = (Component) => (
     class PageWrapper extends React.Component {
-        static async getData() {
-            return getDataFunc? await getDataFunc(): {}
-        }
         static async getInitialProps (ctx) {
             const isServer = !!ctx.req
-            const data = await this.getData()
             const initialState = {
-                data
             }
             const store = initStore(reducer, initialState, isServer)
+            await store.dispatch(fetchData('batches'))
             return {
                 initialState: store.getState(),
                 isServer,

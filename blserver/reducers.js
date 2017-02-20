@@ -12,7 +12,7 @@ function dataReducer(state = {data:{}}, action) {
         case RECEIVE_DATA: 
             return {...state, 
                 data: { 
-                    [action.dataPath]:action.json
+                    [action.dataPath]:action.data
                 }
             }
         

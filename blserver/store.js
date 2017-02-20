@@ -1,15 +1,15 @@
 import { createStore, applyMiddleware, compose } from 'redux'
-import thunkMiddleware from 'redux-thunk'
+import reduxThunk from 'redux-thunk'
 
 let store = null
 
 export const initStore = (reducer, initialState, isServer) => {
   if (isServer && typeof window === 'undefined') {
-    return createStore(reducer, initialState, applyMiddleware(thunkMiddleware))
+    return createStore(reducer, initialState, applyMiddleware(reduxThunk))
   } else {
     if (!store) {
       const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-      store = createStore(reducer, initialState, composeEnhancers(applyMiddleware(thunkMiddleware)))
+      store = createStore(reducer, initialState, composeEnhancers(applyMiddleware(reduxThunk)))
     }
     return store
   }

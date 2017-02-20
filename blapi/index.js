@@ -8,8 +8,15 @@ let batchListData =
     {id: 4, RecipeName: "R&R IPA from server!", SessionDate: "05.05.2017"},
   ]
 
+function getData(dataPath) {
+  switch(dataPath) {
+    case '/batches':
+      return batchListData
+    default:
+      return {}
+  }
+}
 module.exports = async (req, res) => { 
-  result = batchListData
   res.setHeader('Access-Control-Allow-Origin', '*')
-  send(res, 200, result)
+  send(res, 200, getData(req.url))
 }   

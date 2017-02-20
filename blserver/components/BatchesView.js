@@ -30,7 +30,7 @@ BatchList.propTypes = {
   batches: PropTypes.array.isRequired 
 }
 
-export const BatchesView = connect(state => state.data)( ({batches, err}) => {
+export const BatchesView = connect(state => state.data)(({batches, err}) => {
     if (batches) {
       return ( <BatchList batches={batches}/> )
     } else {
