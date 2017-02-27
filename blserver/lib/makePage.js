@@ -7,14 +7,17 @@ import App from '../containers/App'
 
 
 
-const makePage = (Component) => (
+const makePage = (Component, dataPath = '') => (
     class PageWrapper extends React.Component {
         static async getInitialProps (ctx) {
             const isServer = !!ctx.req
             const initialState = {
+                data: {}
             }
             const store = initStore(reducer, initialState, isServer)
-            await store.dispatch(fetchData('batches'))
+            if (dataPath != '') {
+                await store.dispatch(fetchData(dataPath))
+            }
             return {
                 initialState: store.getState(),
                 isServer,

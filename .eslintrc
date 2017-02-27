@@ -1,4 +1,6 @@
 {
+  "parser": "babel-eslint",
+
     "env": {
         "browser": true,
         "commonjs": true,
@@ -24,5 +26,5 @@
         "react"
     ],
     "extends": ["eslint:recommended", "plugin:react/recommended"]
-    
+
 }

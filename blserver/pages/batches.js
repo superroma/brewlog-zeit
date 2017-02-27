@@ -4,5 +4,5 @@ import { BatchesView } from '../components/BatchesView'
 
 export default makePage(() => (
         <BatchesView/>
-  )
+  ), 'batches'
 )
