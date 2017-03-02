@@ -3,6 +3,11 @@ import fetch from 'isomorphic-fetch'
 export const REQUEST_DATA = 'REQUEST_DATA'
 export const RECEIVE_DATA = 'RECEIVE_DATA'
 export const RECEIVE_ERROR = 'RECEIVE_ERROR'
+export const CREATE_BATCH = 'CREATE_SESSION'
+
+export const createBatch = name => (
+  {type: CREATE_BATCH, name}
+)
 
 // function requestData(dataPath) {
 //     return {
