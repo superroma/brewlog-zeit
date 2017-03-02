@@ -9,6 +9,7 @@ export const createBatch = name => (
   {type: CREATE_BATCH, name}
 )
 
+
 // function requestData(dataPath) {
 //     return {
 //         type: REQUEST_DATA,

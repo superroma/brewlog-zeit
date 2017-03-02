@@ -1,10 +1,10 @@
 import React from 'react'
-import Link from 'next/prefetch'
+import Link from 'next/link'
 
 export const NavLink = (props) => (
-  <Link href={props.to}>
+  <Link prefetch href={props.to}>
     <a className={props.path === props.to?"active nav-item nav-link":"nav-item nav-link"} >{props.children}</a>
-  </Link>  
+  </Link>
 )
 export const NavBar = (props) => (
         <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
